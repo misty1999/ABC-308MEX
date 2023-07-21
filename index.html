@@ -1,0 +1,17 @@
+<html>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.22/vue.min.js'></script><!-- 2019-01-25 https://cdnjs.com/libraries/vue -->
+<body>
+<div id="demo">
+<div>Nを入力:<input v-model="N"></div>
+<div>数列を入力:<input v-model="valuelist"></div>
+<div>文字列を入力:<input v-model="MexString"></div>
+<button @click="compute">計算</button>
+<div v-if="!cancompute">{{message}}</div>
+<div v-if="cancompute" v-for="(item,i) in MEXLIST">
+    <p>{{item[0]}}番目、{{item[1]}}番目、{{item[2]}}番目のMEXは{{MEXvalue[i]}}</p>
+</div>
+<div>MEXの合計は{{MEXSUM}}</div>
+</div>
+</body>
+</html>
+<script src="babel.js"></script>
